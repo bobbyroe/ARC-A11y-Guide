@@ -5,7 +5,7 @@ function findCriteria(id) {
 }
 
 function getMarkdownTextSelected(elements) {
-  let markdownText = '';
+  let markdownText = '##Best Practices for A11y##\n';
   elements.forEach(el => (markdownText += `${allCriteria[el.id].md}\n`));
   return markdownText;
 }
