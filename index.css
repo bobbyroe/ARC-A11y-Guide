@@ -9,6 +9,8 @@ body {
 }
 h1 {
   text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
 }
 p {
   margin: 0 0 1rem 0;
