@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
     <title>T-Mobile A11y Checklist</title>
-    <!-- <link href="index.css" rel="stylesheet" /> -->
+    <link href="index.css" rel="stylesheet" />
   </head>
   <body>
     <header>
@@ -13,52 +13,51 @@
         <li>
           <label>
             <input type="checkbox" id="alt-tags" />
-            <p>&lt;img&gt; tags have alt text</p>
+            <p>&lt;img&gt; tags have good alt text</p>
           </label>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-            mollit anim id est laborum.
+            Users with low vision often make use of a talking browser to “read” the web. These
+            specialized browsers convert text to speech so that a user can hear the words on a site.
+            When a talking browser lands on an image, it looks for alt text that it can read aloud;
+            if it finds none, it will often just say “image,” leaving the user in the dark as to
+            what the image is and how it matters to the story.
           </p>
         </li>
 
         <li>
           <label>
             <input type="checkbox" id="keyboard-nav" />
-            <p>&lt;img&gt; tags have alt text</p>
+            <p>Support keyboard navigation</p>
           </label>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-            mollit anim id est laborum.
+            All page functionality is available using the keyboard, unless the functionality cannot
+            be accomplished in any known way using a keyboard (e.g., free hand drawing).
           </p>
         </li>
 
         <li>
           <label>
-            <input type="checkbox" id="criteria-1.2.2" />
-            <p>&lt;img&gt; tags have alt text</p>
+            <input type="checkbox" id="html-landmarks" />
+            <p>Understand and use HTML landmarks</p>
           </label>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-            mollit anim id est laborum.
+            A proper heading structure and/or identification of page regions/landmarks may be
+            considered a sufficient technique. Because navigating by headings or regions is not
+            supported in most browsers, WebAIM recommends a "skip" link (in addition to headings and
+            regions) to best support sighted keyboard users.
           </p>
         </li>
       </ul>
-      <textarea readonly class="preview-box" id="preview_box"></textarea>
+      <textarea
+        readonly
+        class="preview-box"
+        id="preview_box"
+        placeholder="Check boxes above to collect acceptence criteria here"
+      ></textarea>
     </main>
 
     <!-- Scripts -->
+    <script src="data/criteria.js"></script>
     <script src="index.js"></script>
   </body>
 </html>

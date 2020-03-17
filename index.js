@@ -1,32 +1,27 @@
-const allCriteria = {
-  'alt-tags': {
-    id: 111,
-    md:
-      '- Write good alt text for your images [More Info](https://accessibility.voxmedia.com/#about#engineers-4)'
-  },
-  'keyboard-nav': {
-    id: 999,
-    md:
-      ' - Support keyboard navigation [More Info](https://accessibility.voxmedia.com/#about#engineers-2)'
-  },
-  'html-landmarks': {
-    id: 9999,
-    md:
-      '- Understand and use HTML landmarks [More Info](https://accessibility.voxmedia.com/#about#engineers-3)'
-  }
-};
+// import allCriteria from "data/criteria.js"
 
 function findCriteria(id) {
   return id;
 }
 
+function getMarkdownTextSelected(elements) {
+  let markdownText = '';
+  elements.forEach(el => (markdownText += `${allCriteria[el.id].md}\n`));
+  return markdownText;
+}
+
+function updatePreviewTextarea(newText) {
+  const previewTextarea = document.querySelector('#preview_box');
+  previewTextarea.value = newText;
+}
+
 document.querySelector('body').addEventListener('click', evt => {
   if (evt.target.type === 'checkbox') {
-    const id = evt.target.id;
-    console.log(id, evt.target.type);
-    const criteria = allCriteria[findCriteria(id)];
-    console.log(criteria.md);
+    const allCheckboxes = Array.from(document.querySelectorAll('input[type=checkbox]'));
+    const onlyCheckedBoxes = allCheckboxes.filter(el => el.checked === true);
+    const criteriaText = getMarkdownTextSelected(onlyCheckedBoxes);
+    updatePreviewTextarea(criteriaText);
   } else {
-    console.log('other');
+    console.log('other, ignore');
   }
 });
