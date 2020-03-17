@@ -1,183 +1,64 @@
-<html>
+<html lang="en">
   <head>
-    <link href="index.css" rel="stylesheet">
+    <meta charset="utf-8" />
+    <title>T-Mobile A11y Checklist</title>
+    <!-- <link href="index.css" rel="stylesheet" /> -->
   </head>
   <body>
-<header class="container">
-  <h1>This is a webpage</h1>
-  <p>Look at it. It is accessible and uses native elements + css</p>
-</header>
-<main class="container">
+    <header>
+      <h1>Accessibility Checklist</h1>
+    </header>
+    <main class="container">
+      <ul>
+        <li>
+          <label>
+            <input type="checkbox" id="alt-tags" />
+            <p>&lt;img&gt; tags have alt text</p>
+          </label>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+            mollit anim id est laborum.
+          </p>
+        </li>
 
-  <form>
-    <h2>
-      Select styled with CSS
-    </h2>
+        <li>
+          <label>
+            <input type="checkbox" id="keyboard-nav" />
+            <p>&lt;img&gt; tags have alt text</p>
+          </label>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+            mollit anim id est laborum.
+          </p>
+        </li>
 
-    <label for="selectAlpha">Select a NATO Phoenetic Letter</label>
-    
-    
-    <select id="selectAlpha">
-      <option label="First select" disabled selected>First select</option>
-      <option label="Alpha">Alpha</option>
-      <option label="Bravo">Bravo</option>
-      <option label="Charlie">Charlie</option>
-      <option label="Delta">Delta</option>
-    </select>
-    <div></div>
+        <li>
+          <label>
+            <input type="checkbox" id="criteria-1.2.2" />
+            <p>&lt;img&gt; tags have alt text</p>
+          </label>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+            mollit anim id est laborum.
+          </p>
+        </li>
+      </ul>
+      <textarea readonly class="preview-box" id="preview_box"></textarea>
+    </main>
 
-    <h2>
-      CSS Based Checkbox Toggles 
-    </h2>
-    <fieldset>
-      <legend>Choose your options:</legend>
-
-      <input type="checkbox" id="alpha">
-      <label for="alpha">Alpha</label>
-
-      <input type="checkbox" id="bravo">
-      <label for="bravo">Bravo</label>
-
-      <input type="checkbox" id="charlie">
-      <label for="charlie">Charlie</label>
-    </fieldset>
-
-
-    <h2>
-      CSS Based Radio Toggles 
-    </h2>
-    <fieldset>
-      <legend>Choose one option:</legend>
-      <input type="radio" name="paymentMethod" id="radioAlpha">
-      <label for="radioAlpha">Alpha</label>
-
-      <input type="radio" name="paymentMethod" id="radioBravo">
-      <label for="radioBravo">Bravo</label>
-
-      <input type="radio" name="paymentMethod" id="radioCharlie">
-      <label for="radioCharlie">Charlie</label>
-    </fieldset>
-
-    <h2>Accordion Toggle List</h2>
-
-    <fieldset>
-      <legend>"Radio" Accordion Toggle List:</legend>
-      <p>This accordion group uses checkboxes with role="radio" and minimal jQuery to act like radio inputs</p>
-      <!-- This div extra div is here because Chrome won't apply grid styles to a fieldset -->
-      <div class="accordion-group">
-        <input type="checkbox" role="radio" name="expanderList" id="expanderAlpha" aria-describedby="expanderDescAlpha" checked>
-        <label for="expanderAlpha">Expander Alpha</label>
-        <button type="button" class="expander-toggle" aria-expanded="false">Alpha information</button>
-
-        <div class="descriptive-text" id="expanderDescAlpha" aria-hidden="true">
-          <p>This text is descriptive of Checkbox Expander Alpha</p>
-        </div>
-
-        <input type="checkbox" role="radio" name="expanderList" id="expanderBravo" aria-describedby="expanderDescBravo">
-        <label for="expanderBravo">Expander Bravo</label>
-        <button type="button" class="expander-toggle" aria-expanded="false">Bravo information </button>
-
-        <div class="descriptive-text" id="expanderDescBravo" aria-hidden="true">
-          <p>This text is descriptive of Expander Bravo</p>
-        </div>
-
-        <input type="checkbox" role="radio" name="expanderList" id="expanderCharlie" aria-describedby="expanderDescCharlie">
-        <label for="expanderCharlie">Expander Charlie</label>
-        <button type="button" class="expander-toggle" aria-expanded="false">Charlie information</button>
-
-        <div class="descriptive-text" id="expanderDescCharlie" aria-hidden="true">
-          <p>This text is descriptive of Expander Charlie</p>
-        </div>
-      </div>
-    </fieldset>
-
-    <!-- Input Elements Collection -->
-    <h2>A Bunch of Input Elements</h2>
-    <fieldset>
-      <legend>Phone Number Input</legend>
-      <label for="phone-number">Enter your phone number:</label>
-
-      <input type="tel" id="phone-number" name="phone" aria-describedby="phone-tip" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
-
-      <small role="tooltip" id="phone-tip">Format: 555-123-4567</small>
-    </fieldset>
-    
-    <fieldset>
-      <legend>Email Input</legend>
-      <label for="email">Enter your T-mobile.com email:</label>
-      <input type="email" id="email" pattern=".+@t-mobile.com" size="35" required>
-    </fieldset>
-    
-    <fieldset>
-      <legend>Text &amp; Password Inputs</legend>
-      <div>
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
-      </div>
-
-      <div>
-         <label for="pass">Password (8 characters minimum):</label>
-         <input type="password" id="pass" name="password" minlength="8" required>
-      </div>
-    </fieldset>
-    
-    <fieldset>
-      <legend>Range Inputs</legend>
-      <div>
-        <input type="range" id="volume" name="volume" min="0" max="11">
-        <label for="volume">Volume</label>
-      </div>
-
-      <div>
-        <input type="range" id="cowbell" name="cowbell" min="0" max="100" value="90" step="10">
-        <label for="cowbell">Cowbell</label>
-      </div>
-    </fieldset>
-    
-    <fieldset>
-      <legend>Search Input</legend>
-      <label for="site-search">Search all T-Mobile devices:</label>
-      <input type="search" id="site-search" name="q" aria-label="Search all T-Mobile devices">
-      <button>Search</button>
-    </fieldset>
-    
-    <fieldset>
-      <legend>Date Input</legend>
-      <label for="start">Start date:</label>
-      <input type="date" id="start" name="trip-start" value="2020-03-06" min="2020-01-01" max="2020-12-31">
-    </fieldset>
-    
-    <fieldset>
-      <legend>File Upload Input</legend>
-      <label for="avatar">Choose a profile picture:</label>
-      <input type="file"  id="avatar" name="avatar" accept="image/png, image/jpeg">
-    </fieldset>
-    
-    <fieldset>
-      <legend>Comments and Feedback</legend>
-      <p>Let us know what you think</p>
-      <div class="textarea-group">
-        <label for="customer-comments"></label>
-        <textarea id="customer-comments" placeholder="Type feedback here..."></textarea>
-      </div>
-    </fieldset>
-    <!-- / Input Elements Collection -->
-    
-    <button type="button">Submit</submit>
-  </form>
-</main>
-
-<footer class="container" role="contentinfo">
-  <ul>
-    <li>
-      <a href="http://charliecharliecharlie.com/">Charlie's Website</a>
-    </li>
-  </ul>
-</footer> 
-
-<!-- Scripts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="index.js"></script>
-
+    <!-- Scripts -->
+    <script src="index.js"></script>
   </body>
 </html>
