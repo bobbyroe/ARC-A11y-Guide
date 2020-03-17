@@ -27,6 +27,7 @@ p {
 label {
   display: block;
   font-weight: bold;
+  font-size: 100%;
   margin: 0 0 0.5rem 0;
 }
 input {
@@ -36,14 +37,21 @@ input {
   border: 1px solid #ccc;
   border-radius: 2px;
 }
-
+input[type='checkbox'] {
+  position: absolute;
+  top: 1px;
+  left: -30px;
+}
 textarea {
   display: block;
   width: 100%;
   min-height: 200px;
   /* border: 1px solid red; */
 }
-
+ul {
+  list-style: none;
+}
 li {
   margin-bottom: 1em;
+  position: relative;
 }
