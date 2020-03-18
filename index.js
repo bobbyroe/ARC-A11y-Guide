@@ -25,3 +25,8 @@ document.querySelector('body').addEventListener('click', evt => {
     console.log('other, ignore');
   }
 });
+
+// http://clipboardjs.com
+const clipboard = new ClipboardJS('#copy-to-clipboard');
+clipboard.on('success', evt => console.info(`copied to clipboard: ${evt.text}`));
+clipboard.on('error', evt => console.error(`failed to ${$evt.action}, ${evt.trigger}!`));
