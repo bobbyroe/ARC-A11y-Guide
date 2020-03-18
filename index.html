@@ -12,7 +12,7 @@
       <ul>
         <li>
           <label>
-            <input type="checkbox" id="alt-tags" />
+            <input type="checkbox" id="alt-tags" checked />
             <p>&lt;img&gt; tags have good alt text</p>
           </label>
           <p>
@@ -48,15 +48,17 @@
           </p>
         </li>
       </ul>
-      <textarea
-        readonly
-        class="preview-box"
-        id="preview_box"
-        placeholder="Check boxes above to collect acceptence criteria here"
-      ></textarea>
-      <button id="copy-to-clipboard" data-clipboard-target="#preview_box">
-        Copy To Clipboard
-      </button>
+      <div id="guidelines-preview">
+        <textarea
+          readonly
+          class="preview-box"
+          id="preview_box"
+          placeholder="Check boxes above to collect acceptence criteria here"
+        ></textarea>
+        <button class="btn" id="copy-to-clipboard" data-clipboard-target="#preview_box">
+          Copy To Clipboard
+        </button>
+      </div>
     </main>
 
     <!-- Scripts -->
