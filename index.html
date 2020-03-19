@@ -9,44 +9,8 @@
       <h1>Accessibility Checklist</h1>
     </header>
     <main class="container">
-      <ul>
-        <li>
-          <label>
-            <input type="checkbox" id="alt-tags" checked />
-            <p>&lt;img&gt; tags have good alt text</p>
-          </label>
-          <p>
-            Users with low vision often make use of a talking browser to “read” the web. These
-            specialized browsers convert text to speech so that a user can hear the words on a site.
-            When a talking browser lands on an image, it looks for alt text that it can read aloud;
-            if it finds none, it will often just say “image,” leaving the user in the dark as to
-            what the image is and how it matters to the story.
-          </p>
-        </li>
-
-        <li>
-          <label>
-            <input type="checkbox" id="keyboard-nav" />
-            <p>Support keyboard navigation</p>
-          </label>
-          <p>
-            All page functionality is available using the keyboard, unless the functionality cannot
-            be accomplished in any known way using a keyboard (e.g., free hand drawing).
-          </p>
-        </li>
-
-        <li>
-          <label>
-            <input type="checkbox" id="html-landmarks" />
-            <p>Understand and use HTML landmarks</p>
-          </label>
-          <p>
-            A proper heading structure and/or identification of page regions/landmarks may be
-            considered a sufficient technique. Because navigating by headings or regions is not
-            supported in most browsers, WebAIM recommends a "skip" link (in addition to headings and
-            regions) to best support sighted keyboard users.
-          </p>
-        </li>
+      <ul id="checklist">
+        <!-- checklist content goes here. -->
       </ul>
       <div id="guidelines-preview">
         <textarea
@@ -60,6 +24,19 @@
         </button>
       </div>
     </main>
+
+    <!-- Templates -->
+    <template id="checklist-item">
+      <li>
+        <label>
+          <input type="checkbox" checked />
+          <p>title</p>
+        </label>
+        <p>
+          detailed description.
+        </p>
+      </li>
+    </template>
 
     <!-- Scripts -->
     <script src="libs/clipboard.min.js"></script>

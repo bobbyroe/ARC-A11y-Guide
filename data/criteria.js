@@ -1,14 +1,215 @@
 const allCriteria = {
   'alt-tags': {
-    id: 111,
-    md: '- Write good alt text for your images [More Info](https://webaim.org/techniques/alttext/)'
+    name: 'Images have good alt text',
+    'citeria-id': '1.1.1',
+    category: 'Perceivable',
+    subcategory: 'Text Alternatives',
+    level: 'A',
+    notes:
+      'Users with low vision often make use of a talking browser to “read” the web. These specialized browsers convert text to speech so that a user can hear the words on a site. When a talking browser lands on an image, it looks for alt text that it can read aloud; if it finds none, it will often just say “image,” leaving the user in the dark as to what the image is and how it matters to the story.\n\nDescribe all of the elements that explain what’s happening in the image, rather than just setting the alt text to be something like, “photograph"\n\nIf you have to use an image of text, be sure to describe the design if relevant, as well as all of the words in the image. (Ex: Whiteboard drawing of the quote “This is a quote”)',
+    'more info link': null,
+    markdown:
+      ' - Write good alt text for your images [More Info](https://webaim.org/standards/wcag/checklist)'
+  },
+  'alt-null': {
+    name: 'Decorative content is hidden from screen readers',
+    'citeria-id': '1.1.1',
+    category: 'Perceivable',
+    subcategory: 'Text Alternatives',
+    level: 'A',
+    notes:
+      'Decorative elements, such as dividing lines, pull-quotes, or non-informative icons, can be hidden from screen readers to ensure that a user only receives relevant information as they peruse the page. This is done by adding aria-hidden=”true”  to the element.',
+    'more info link': '"decorative" images have empty alt text',
+    markdown:
+      ' - Hide decorative elements from screen readers [More Info](https://webaim.org/standards/wcag/checklist)'
+  },
+  'button-text': {
+    name: 'Form buttons have descriptive text',
+    'citeria-id': '1.1.1',
+    category: 'Perceivable',
+    subcategory: 'Text Alternatives',
+    level: 'A',
+    notes: 'TBD',
+    'more info link': null,
+    markdown:
+      ' - Form buttons have a descriptive value [More Info](https://webaim.org/standards/wcag/checklist)'
+  },
+  'input-labels': {
+    name: 'Form inputs have good labels',
+    'citeria-id': '1.1.1',
+    category: 'Perceivable',
+    subcategory: 'Text Alternatives',
+    level: 'A',
+    notes: 'TBD',
+    'more info link': 'How does the screen reader read these?',
+    markdown:
+      ' - Form inputs have good labels [More Info](https://webaim.org/standards/wcag/checklist)'
+  },
+  'semantic-tags': {
+    name: 'Correct HTML element for the content',
+    'citeria-id': null,
+    category: null,
+    subcategory: null,
+    level: null,
+    notes:
+      'HTML elements communicate to the browser what kind of content they contain and how the browser should render or treat that content. The accessibility tree is built off of assumptions about the elements and their structure. This is the browser feature which powers screen readers. Choosing the correct element for the current context is a simple way to create a good foundation for your experiences.',
+    'more info link': null,
+    markdown:
+      ' - Use the correct HTML element for your content [More Info](https://webaim.org/standards/wcag/checklist)'
   },
   'keyboard-nav': {
-    id: 211,
-    md: '- Support keyboard navigation [More Info](https://webaim.org/techniques/keyboard/)'
+    name: 'Keyboard navigation works well',
+    'citeria-id': null,
+    category: null,
+    subcategory: null,
+    level: null,
+    notes:
+      'Browsers support tabbing through link, form, button elements. This is an easy way to move around the page, but it’s very easy to accidentally hinder this functionality: by relying on CSS to move elements around instead of actually reordering the HTML; hiding elements from tab flow, either by faking buttons (with JavaScript) in lieu of using button elements or disabling tab via tabindex=”-1”; and hiding form elements (on a tabbed interface) but not removing them from the tab flow (so that hidden form elements can be focused).',
+    'more info link': null,
+    markdown:
+      ' - Support keyboard navigation [More Info](https://webaim.org/standards/wcag/checklist)'
   },
   'html-landmarks': {
-    id: 241,
-    md: '- Understand and use HTML landmarks [More Info](https://webaim.org/techniques/skipnav/)'
+    name: 'HTML Landmarks are used correctly',
+    'citeria-id': null,
+    category: null,
+    subcategory: null,
+    level: null,
+    notes:
+      'People who use assistive devices may not want to peruse your content linearly, instead preferring to use an outline view (generated from markup) to find the relevant content for their current needs. These landmarks, like main and form and navigation help define specific areas that a user might want to seek out and can save them a lot of time.',
+    'more info link': null,
+    markdown:
+      ' - Understand and use HTML landmarks [More Info](https://webaim.org/standards/wcag/checklist)'
+  },
+  'focus-state': {
+    name: 'Elements with focus have clear focused state',
+    'citeria-id': null,
+    category: null,
+    subcategory: null,
+    level: null,
+    notes:
+      'Your designs should never actively hide focus states. When people use the keyboard to navigate, your product should include highly visible focus states.',
+    'more info link': null,
+    markdown:
+      ' - Design focus states to help users navigate and understand where they are [More Info](https://webaim.org/standards/wcag/checklist)'
+  },
+  'inputs-clear': {
+    name: 'Forms and Inputs are easy to understand, use and correct mistakes',
+    'citeria-id': null,
+    category: null,
+    subcategory: null,
+    level: null,
+    notes:
+      'Labels should never completely go away when the focus is inside of an input. Users should always have clear instructions on what they should be inputting. Put error messages in text that explain the error and how to fix the error. Never rely solely on color to indicate errors.',
+    'more info link':
+      'The 1st rule of ARIA is: "Don\'t use ARIA" – use a semantic HTML tag instead',
+    markdown:
+      ' - Help users understand inputs, and help them avoid and correct mistakes [More Info](https://webaim.org/standards/wcag/checklist)'
+  },
+  'aria-attrs': {
+    name: 'ARIA attributes are used when needed',
+    'citeria-id': null,
+    category: null,
+    subcategory: null,
+    level: null,
+    notes:
+      'ARIA stands for Accessible Rich Internet Applications. It is an optional but helpful spec to define ways to markup HTML that has dynamic experiences (typically controlled by JavaScript).  The goal when using them is to communicate to the browser and assistive technology how content is going to change or what the purpose of the content is. Dynamic error messages can be called out to screenreaders, buttons can be linked to the content they affect and many other helpful states can be expressed on a code level.',
+    'more info link': null,
+    markdown:
+      ' - Use ARIA attributes when applicable [More Info](https://webaim.org/standards/wcag/checklist)'
+  },
+  'skip-links': {
+    name: 'Customers can skip top-level navigation to access main content',
+    'citeria-id': null,
+    category: null,
+    subcategory: null,
+    level: null,
+    notes:
+      'For keyboard users, it can be helpful to give them a way to skip past top level navigation to get to the main content. This is typically a button at the top of the page (it can only be visible if active), that, when clicked, shifts the current focus from the button to the top of the main content of the page. This saves the user from having to tab through many many elements of navigation.',
+    'more info link': null,
+    markdown:
+      ' - Give users a way to skip top level navigation to access main content [More Info](https://webaim.org/standards/wcag/checklist)'
+  },
+  'link-text': {
+    name: 'Links have good descriptive text',
+    'citeria-id': null,
+    category: null,
+    subcategory: null,
+    level: null,
+    notes:
+      'Assistive technology is able to find all links on a page and present them in various forms, but these links are rather useless if it’s a long list of links that are just the text “click here.” A better way is to have the link describe where the user will go if they click it, giving them an idea of what’s on the other side of clicking.',
+    'more info link': null,
+    markdown: ' - Make links descriptive [More Info](https://webaim.org/standards/wcag/checklist)'
+  },
+  'html-lang': {
+    name: 'HTML document has a valid language attribute',
+    'citeria-id': null,
+    category: null,
+    subcategory: null,
+    level: null,
+    notes:
+      'The HTML lang attribute is used to identify the language of text content on the web. This information helps search engines return language specific results, and it is also used by screen readers that switch language profiles to provide the correct accent and pronunciation. e.g. <html lang="en">',
+    'more info link': null,
+    markdown:
+      ' - HTML document should have a language attribute [More Info](https://webaim.org/standards/wcag/checklist)'
+  },
+  'link-states': {
+    name: 'Links can be clearly seen and have clear :focus and :active states',
+    'citeria-id': '?',
+    category: null,
+    subcategory: null,
+    level: null,
+    notes:
+      "The outline property indicates when an element or selected or has focus. This is helpful to users who don't have the ability to use a mouse or are visually impaired.",
+    'more info link': null,
+    markdown:
+      ' - Links should be visually identifiable and have clear :focus and :active states [More Info](https://webaim.org/standards/wcag/checklist)'
+  },
+  'many-routes': {
+    name: 'Customers can use alternate routes to access important content and information',
+    'citeria-id': '?',
+    category: null,
+    subcategory: null,
+    level: null,
+    notes:
+      'It can be difficult to make certain components (like an SVG map) into accessible experiences. In those cases, consider creating an additional screen reader-friendly experience, or at the very least, describe the experience to users.',
+    'more info link': null,
+    markdown:
+      ' - Create alternate routes for users to access information [More Info](https://webaim.org/standards/wcag/checklist)'
+  },
+  'svg-a11y': {
+    name: 'SVGs are accessible',
+    'citeria-id': '?',
+    category: null,
+    subcategory: null,
+    level: null,
+    notes:
+      'SVGs are often used as icons on interactive elements in sites. When this is the case, the SVG should have a title or embedded text (that is visually hidden but available to assistive tech) to ensure that the information of the icon is available programmatically.',
+    'more info link': null,
+    markdown:
+      ' - Make SVGs accessible to assistive technology [More Info](https://webaim.org/standards/wcag/checklist)'
+  },
+  'pseudo-els': {
+    name: 'No images or icons in pseuo-elements',
+    'citeria-id': '?',
+    category: null,
+    subcategory: null,
+    level: null,
+    notes:
+      'Assistive technology relies on HTML to find the content to present to users. It’s possible to create pseudo-elements with CSS, however, there is currently no way to provide alternative text if there are images or icons here.',
+    'more info link': null,
+    markdown:
+      ' - Avoid images and iconography in pseudo-elements [More Info](https://webaim.org/standards/wcag/checklist)'
+  },
+  'good-contrast': {
+    name: "There's good contrast with text and background",
+    'citeria-id': null,
+    category: null,
+    subcategory: null,
+    level: null,
+    notes:
+      'According to the WCAG, the contrast ratio between text and the text’s background should be at least 4.5 to 1. If your font is at least 24 px or 19 px bold, the minimum drops to 3 to 1 (though, worth noting that this is a little fuzzy because numbered sizes aren’t always reflective of the visual size type). Be especially careful of text over images.',
+    'more info link': null,
+    markdown: null
   }
 };
