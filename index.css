@@ -43,7 +43,7 @@ input[type='checkbox'] {
   position: absolute;
   height: 22px;
   width: 22px;
-  top: -2px;
+  top: -4px;
   left: -40px;
 }
 textarea {
