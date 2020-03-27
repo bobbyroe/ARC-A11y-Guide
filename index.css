@@ -10,10 +10,10 @@ body {
 h1 {
   text-align: center;
   margin-top: 2rem;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 p {
-  margin: 0 0 1rem 0;
+  margin: 0 0 1rem 1rem;
 }
 
 * :focus {
@@ -21,9 +21,24 @@ p {
   outline-offset: 2px;
 }
 
+header,
 .container {
   max-width: 768px;
   margin: 0px auto;
+}
+
+header ul {
+  padding-top: 1em;
+  padding-bottom: 0rem;
+  color: #909090;
+}
+header ul li {
+  padding: 0.5rem 0 0 1rem;
+  font-size: 1em;
+}
+header ul li strong {
+  font-size: 1.2em;
+  color: #606060;
 }
 
 label {
@@ -44,7 +59,7 @@ input[type='checkbox'] {
   height: 22px;
   width: 22px;
   top: -4px;
-  left: -40px;
+  left: -20px;
 }
 textarea {
   display: block;
@@ -56,8 +71,9 @@ ul {
   list-style: none;
 }
 li {
-  margin-bottom: 1em;
+  padding-bottom: 1em;
   position: relative;
+  /* background-color: #e0e0e0; */
 }
 .btn {
   padding: 6px 12px;
