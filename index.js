@@ -59,3 +59,22 @@ clipboard.on('error', evt => console.error(`failed to ${$evt.action}, ${evt.trig
 // WCAG data
 // https://docs.google.com/spreadsheets/d/12wkTEMgHGbVXpaD0r1jRnYpkjwa6nFB_WYt4FBjd4as/edit?usp=sharing
 // https://docs.google.com/spreadsheets/d/e/2PACX-1vSadJ_DdSRi5jahZuZz04Xb84fQr0PILyJCSdAEjK6FIbp-9SGOeD6PO-ZYrosfk799o0EGqrk5th_J/pubhtml
+
+//
+const queries = {
+  entries: '{ entries { title } }'
+};
+fetch('http://a11yengineer.com/api', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    query: queries.entries
+  })
+})
+  .then(res => res.json())
+  .then(json => console.log(json.errors, json.data))
+  .catch(err => {
+    console.log(err);
+  });
