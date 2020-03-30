@@ -1,4 +1,5 @@
 // import allCriteria from "data/criteria.js"
+// import query from "a11yquery.js"
 
 function renderChecklistHTML() {
   const container = document.getElementById('checklist');
@@ -61,16 +62,67 @@ clipboard.on('error', evt => console.error(`failed to ${$evt.action}, ${evt.trig
 // https://docs.google.com/spreadsheets/d/e/2PACX-1vSadJ_DdSRi5jahZuZz04Xb84fQr0PILyJCSdAEjK6FIbp-9SGOeD6PO-ZYrosfk799o0EGqrk5th_J/pubhtml
 
 //
-const queries = {
-  entries: '{ entries { title } }'
-};
+const query = `
+query Entry {
+  entry (slug: "button"){
+    title
+    ... on thing_thing_Entry {
+      matrix {
+        ... on matrix_successCriteria_BlockType {
+          typeHandle
+          criteria {
+            description
+            role
+            relationships
+            state
+            focus
+            action
+          }
+        }
+        ... on matrix_keyboardSupport_BlockType {
+          typeHandle
+          keyboardActions {
+            key
+            function
+          }
+        }
+        ... on matrix_nativeElement_BlockType {
+          typeHandle
+          summary
+          description
+          role
+          relationships
+          state
+          focus
+          action
+        }
+        ... on matrix_customElement_BlockType {
+          typeHandle
+          summary
+          description
+          role
+          relationships
+          state
+          focus
+          action
+        }
+      }
+    }
+  }
+}
+`;
+const queryVariables = `
+{
+  "slug": ["button"]
+}
+`;
 fetch('http://a11yengineer.com/api', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json'
   },
   body: JSON.stringify({
-    query: queries.entries
+    query: query
   })
 })
   .then(res => res.json())
