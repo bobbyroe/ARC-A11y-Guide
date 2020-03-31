@@ -116,7 +116,7 @@ const queryVariables = `
   "slug": ["button"]
 }
 `;
-fetch('http://a11yengineer.com/api', {
+fetch('https://a11yengineer.com/api', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json'
