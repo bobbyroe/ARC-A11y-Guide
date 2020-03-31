@@ -1,21 +1,20 @@
 // import allCriteria from "data/criteria.js"
 // import query from "a11yquery.js"
-
 function renderChecklistHTML() {
   const container = document.getElementById('checklist');
   const template = document.getElementById('checklist-item');
 
-  Object.keys(allCriteria).forEach(key => {
+  allCriteria.forEach(item => {
     const clone = template.content.cloneNode(true);
     // checkbox
     const checkbox = clone.querySelector('input');
-    checkbox.id = key;
+    checkbox.id = item.id;
     // title
     const title = clone.querySelector('li label p');
-    title.textContent = allCriteria[key].name;
+    title.textContent = item.name;
     // description
     const description = clone.querySelector('label+p');
-    description.textContent = allCriteria[key].notes;
+    description.textContent = item.notes;
     container.appendChild(clone);
   });
 }
@@ -29,7 +28,12 @@ function findCriteria(id) {
 
 function getMarkdownTextSelected(elements) {
   let markdownText = '##Best Practices for A11y##\n';
-  elements.forEach(el => (markdownText += `${allCriteria[el.id].markdown}\n`));
+  elements.forEach(el => {
+    // this is inefficient //
+    // consider converting the array to a Object / hashmap
+    const crit = allCriteria.find(ac => ac.id === el.id);
+    markdownText += `${crit.markdown}\n`;
+  });
   return markdownText;
 }
 function getCheckedCriteria() {
