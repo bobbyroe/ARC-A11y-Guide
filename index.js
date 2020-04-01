@@ -6,6 +6,8 @@ function renderChecklistHTML() {
 
   allCriteria.forEach(item => {
     const clone = template.content.cloneNode(true);
+    const li = clone.querySelector('li');
+    li.className = item.category.toLowerCase();
     // checkbox
     const checkbox = clone.querySelector('input');
     checkbox.id = item.id;

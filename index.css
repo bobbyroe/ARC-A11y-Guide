@@ -41,6 +41,18 @@ header ul li strong {
   color: #606060;
 }
 
+.perceivable {
+  background-color: rgba(255, 174, 0, 0.2);
+}
+.operable {
+  background-color: rgba(255, 0, 0, 0.2);
+}
+.understandable {
+  background-color: rgba(174, 255, 0, 0.2);
+}
+.robust {
+  background-color: rgba(0, 255, 174, 0.2);
+}
 label {
   display: block;
   font-weight: bold;
@@ -61,9 +73,12 @@ input[type='checkbox'] {
   top: -4px;
   left: -20px;
 }
+#guidelines-preview {
+  margin-bottom: 5rem;
+}
 textarea {
   display: block;
-  margin: 3rem 0 1rem;
+  margin: 1rem 0 1rem;
   width: 100%;
   min-height: 200px;
 }
@@ -71,7 +86,7 @@ ul {
   list-style: none;
 }
 li {
-  padding-bottom: 1em;
+  padding: 0.5rem 0 0.5rem;
   position: relative;
   /* background-color: #e0e0e0; */
 }
